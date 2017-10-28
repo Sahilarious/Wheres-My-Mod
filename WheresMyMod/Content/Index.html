@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <base href="/Content/" />
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite|VT323" rel="stylesheet">
+    <style type="text/css">
+        body, html {
+            background-color: black;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul {
+            list-style-type: none;
+            background-color: gold;
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            height: 50px;
+            width: 100%;
+            position: fixed;
+            top: 100px;
+            border-top: 3px solid rgba(70,70,70,0.5);
+            border-bottom: 3px solid rgba(70,70,70,0.5);
+            z-index: 1;
+        }
+
+        li {
+            display: inline-block;
+            background-color: gold;
+            vertical-align: middle;
+            position: relative;
+            top: 0px;
+            margin-left: 20px;
+            font-family: monospace;
+            padding: 15px 5px;
+        }
+
+        li:last-child {
+            margin-left: 0px;
+        }
+
+        li:hover {
+            background-color: goldenrod;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            vertical-align: middle;
+            color: black;
+        }
+
+        h1 {
+            color: gold;
+            font-size: 80px;
+            padding: 20px 0px 0px 40px;
+            font-family: 'Special Elite', cursive;
+            position: fixed;
+            background-color: black;
+            width: 100%;
+            margin: 0px;
+            z-index: 1;
+        }
+
+        #content {
+            height:auto;
+        }
+
+        #navContainer {
+            clear: right;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<div ng-app="wmmApp">
+
+    <div id="navContainer">
+        <h1>Where's My Mod</h1>
+        <ul class="navBar">
+            <li><a ui-sref="gamesIndex">Games</a></li>
+            <li><a ui-sref="modsIndex">Browse Mods</a></li>
+        </ul>
+    </div>
+
+    <section id="content">
+        <div class="container">
+            <div>
+                <div ui-view></div>
+            </div>
+        </div>
+    </section>
+   
+</div>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+   
+    <!---------------- Main App Controller ---------------->
+    <script src="app.js"></script>
+
+    <!---------------- Module Components ---------------->
+    <script src="modules/gamesIndex/gamesComponent.js"></script>
+    <script src="modules/modsIndex/allModsComponent.js"></script>
+    <script src="modules/gameMods/gameModsComponent.js"></script>
+
+    <!---------------- Services ---------------->
+    <script src="services/gamesService.js"></script>
+    <script src="services/modsService.js"></script>
+
+    <!---------------- Module Controllers ---------------->
+    <script src="modules/gamesIndex/gamesController.js"></script>
+    <script src="modules/modsIndex/allModsController.js"></script>
+    <script src="modules/gameMods/gameModsController.js"></script>
+
+
+</body>
+</html>

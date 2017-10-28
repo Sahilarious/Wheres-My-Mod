@@ -1,0 +1,74 @@
+﻿
+    <style type="text/css">
+        .mod {
+            display: inline-block;
+            width: 200px;
+            margin: 20px;
+            position: initial;
+            vertical-align: top;
+        }
+
+        .modTitle {
+            text-overflow: inherit;
+            text-align: center;
+            color: grey;
+            font-family: monospace;
+            font-size: 20px;
+        }
+
+        .modContainerAll {
+            background-color: rgba(70,70,70,0.5);
+            border-radius: 20px;
+            border: 1px solid gold;
+            width: 960px;
+            display: block;
+            margin: 0 auto;
+            z-index: 0;
+            position: relative;
+            top: 160px;
+        }
+
+        .modImage {
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+            position: relative;
+            top: 5px;
+            height: 100px;
+        }
+
+        .modImage:hover {
+            border: 2px solid gold;
+            height: 96px;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            vertical-align: middle;
+            color: black;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 40px;
+            width: 100%;
+            border-top: 1px solid gold;
+            border-bottom: 1px solid gold;
+            font-family: monospace;
+            padding: 5px 0px;
+            color: darkgoldenrod;
+        }
+    </style>
+
+<div>
+    <div class="modContainerAll">
+        <h2 ng-bind="exMod.game.name"></h2>
+        <div class="mod" ng-repeat="mod in exMod.mods">
+
+            <a ng-click="exMod.modPage(mod")><img class="modImage" ng-src="{{mod.picUrl}}" /></a>
+            <h3 class="modTitle" ng-bind="mod.name"></h3>
+
+        </div>
+    </div>
+</div>   

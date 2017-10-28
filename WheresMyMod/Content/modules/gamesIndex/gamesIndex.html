@@ -1,0 +1,60 @@
+﻿
+    <style type="text/css">
+       
+         .game {
+             display: inline-block;
+             width: 200px;         
+             margin: 20px;
+             position: initial;
+             vertical-align: top;
+         }
+
+         .gameImage:hover {
+             border: 2px solid gold;
+             height: 196px;
+         }
+
+        .gameTitle {
+            text-overflow: inherit;
+            text-align: center;
+            color: grey;
+            font-family: monospace;
+            font-size: 20px;
+        }
+       
+        .gameContainerAll {
+            background-color: rgba(70,70,70,0.5);
+            border-radius: 20px;
+            border: 1px solid gold;
+            width: 960px;
+            display: block;
+            margin: 0 auto;
+            z-index:0;
+            position: relative;
+            top: 160px;
+        }
+
+        .gameImage {
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+            position: relative;
+            top: 5px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+    </style>
+
+<div>
+    <div class="gameContainerAll">
+        <div class="game" ng-repeat="game in exGame.games">
+            <!--<a ng-target="_blank" ng-href="{{game.pageUrl}}"><img ng-src="{{game.picUrl}}"/></a>-->
+            <!--<img class="gameImage" ng-click="exGame.gamePage(game)" ng-src="{{game.picUrl}}"/>-->
+            <img class="gameImage" ui-sref="gameMods({id: game.id})" ng-src="{{game.picUrl}}" />
+            <h3 class="gameTitle" ng-bind="game.name"></h3>
+        </div>
+    </div>
+</div>         
+            
+     
